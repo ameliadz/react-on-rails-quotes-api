@@ -15,4 +15,25 @@ class QuotesController < ApplicationController
     end
   end
 
+  def new
+    @quote = Quote.new
+  end
+
+  def create
+    begin
+      @quote = Quote.new(quote_params)
+      if @quote.save
+        @quotes = Quote.all
+        render json: @quotes, status: :ok
+      end
+    rescue Exception
+      render json: { message: "An error occurred" }, status: :internal_server_error
+    end
+  end
+
+  private
+  def quote_params
+    params.require(:quote).permit(:content, :author, :category)
+  end
+
 end

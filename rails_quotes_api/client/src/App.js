@@ -31,6 +31,19 @@ class App extends Component {
       );
     });
   }
+  //
+  // form() {
+  //   return (
+  //     <form>
+  //       <label htmlFor="content">Content:</label>
+  //       <input type="text" name="content" />
+  //       <label htmlFor="author">Author:</label>
+  //       <input type="text" name="author" />
+  //       <label htmlFor="category">Category:</label>
+  //       <input type="text" name="category" />
+  //     </form>
+  //   )
+  // }
 
   render() {
     return (
